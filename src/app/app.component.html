@@ -1,0 +1,25 @@
+<div class="input">
+  <div class="input-inner">
+    <label for="job">Job:</label><br />
+    <input
+      type="text"
+      placeholder="Enter the job to push in a array(job)"
+      class="job"
+      [(ngModel)]="job"
+    /><br />
+    <input
+      type="button"
+      id="btn"
+      value="submit"
+      class="btn"
+      (click)="getValue()"
+    />
+    <p *ngFor="let job of jobDisplay">
+      {{ job }}
+    </p>
+    <app-job-list
+      [job]="jobToSend"
+      (showJob)="displayElement($event)"
+    ></app-job-list>
+  </div>
+</div>
